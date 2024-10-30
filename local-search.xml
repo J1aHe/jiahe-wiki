@@ -3,5 +3,230 @@
   
   
   
+  <entry>
+    <title>Hello World</title>
+    <link href="/2024/10/30/hello-world/"/>
+    <url>/2024/10/30/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo迁移</title>
+    <link href="/2024/10/28/Hexo%E8%BF%81%E7%A7%BB/"/>
+    <url>/2024/10/28/Hexo%E8%BF%81%E7%A7%BB/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo迁移"><a href="#Hexo迁移" class="headerlink" title="Hexo迁移"></a>Hexo迁移</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>迁移</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Java全局异常处理</title>
+    <link href="/2024/10/28/Java%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+    <url>/2024/10/28/Java%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Java全局异常处理"><a href="#Java全局异常处理" class="headerlink" title="Java全局异常处理"></a>Java全局异常处理</h2><blockquote><p>全局异常处理是一种将异常处理代码从业务逻辑中分离出来的技术。</p><p>在Java中，全局异常处理使用@ControllerAdvice注解定义一个全局的异常处理类。</p><p>在该类中，使用@ExceptionHandler注解捕获异常并进行处理。</p><p>使用全局异常处理技术，可以统一处理异常，提高代码的复用性，降低代码的冗余度。</p></blockquote><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-定义自定义异常类"><a href="#1-定义自定义异常类" class="headerlink" title="1. 定义自定义异常类"></a>1. 定义自定义异常类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.jiahe.api.exception;<br><br><br><span class="hljs-keyword">import</span> lombok.Getter;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BaseException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">RuntimeException</span> &#123;<br><br>    <span class="hljs-meta">@Getter</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String code;<br><br>    <span class="hljs-meta">@Getter</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String message;<br><br>    <span class="hljs-meta">@Getter</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Object error;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">BaseException</span><span class="hljs-params">(String code, String message, Object error)</span> &#123;<br>        <span class="hljs-built_in">this</span>.code = code;<br>        <span class="hljs-built_in">this</span>.message = message;<br>        <span class="hljs-built_in">this</span>.error = error;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">BaseException</span><span class="hljs-params">(String code, String message)</span> &#123;<br>        <span class="hljs-built_in">this</span>.code = code;<br>        <span class="hljs-built_in">this</span>.message = message;<br>        <span class="hljs-built_in">this</span>.error = <span class="hljs-literal">null</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">BaseException</span><span class="hljs-params">(String message)</span> &#123;<br>        <span class="hljs-built_in">this</span>.code = <span class="hljs-literal">null</span>;<br>        <span class="hljs-built_in">this</span>.message = message;<br>        <span class="hljs-built_in">this</span>.error = <span class="hljs-literal">null</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="2-定义全局异常处理类"><a href="#2-定义全局异常处理类" class="headerlink" title="2. 定义全局异常处理类"></a>2. 定义全局异常处理类</h3><blockquote><p>定义全局异常处理类需要使用@ControllerAdvice注解。</p><p>在该类中，使用@ExceptionHandler注解捕获异常并进行处理。</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>异常</category>
+      
+      <category>Exception</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>异常</tag>
+      
+      <tag>Exception</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Mysql数据复制</title>
+    <link href="/2024/10/26/Mysql%E6%95%B0%E6%8D%AE%E5%A4%8D%E5%88%B6/"/>
+    <url>/2024/10/26/Mysql%E6%95%B0%E6%8D%AE%E5%A4%8D%E5%88%B6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Mysql数据复制"><a href="#Mysql数据复制" class="headerlink" title="Mysql数据复制"></a>Mysql数据复制</h2><blockquote><p>将一张表的数据复制（not迁移&#x2F;导入）到另外一张表</p></blockquote><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><blockquote><p>拷贝表1的全部<code>数据</code>到表2</p></blockquote><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> table2 <span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> table1 <br></code></pre></td></tr></table></figure><h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><blockquote><p>创建表2， 同时拷贝表1的数据和结构到表2</p></blockquote><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> table3 <span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> table1<br></code></pre></td></tr></table></figure><h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><blockquote><p>创建表2，只拷贝表1的结构到表2，不拷贝数据</p><p>或者查看源表的ddl，复制粘贴</p></blockquote><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> table4 <span class="hljs-keyword">LIKE</span> table1<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Mysql</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Mysql</tag>
+      
+      <tag>数据复制</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Spring Security</title>
+    <link href="/2024/10/25/Spring-Security/"/>
+    <url>/2024/10/25/Spring-Security/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Spring-Security"><a href="#Spring-Security" class="headerlink" title="Spring Security"></a>Spring Security</h2><h3 id="Maven依赖"><a href="#Maven依赖" class="headerlink" title="Maven依赖"></a>Maven依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-security<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 6.19版本往后需要java17 --&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>加入到项目以后，会有一个<code>/login</code>页面，需要登录才能访问其他页面，默认用户名<code>user</code>，密码在启动日志中</p></blockquote><h3 id="也可以配置用户名和密码"><a href="#也可以配置用户名和密码" class="headerlink" title="也可以配置用户名和密码"></a>也可以配置用户名和密码</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">spring:</span><br>  <span class="hljs-attr">security:</span><br>    <span class="hljs-attr">user:</span><br>      <span class="hljs-attr">name:</span> <span class="hljs-string">jiahe</span><br>      <span class="hljs-attr">password:</span> <span class="hljs-string">jiahe45</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Spring</category>
+      
+      <category>Spring Sercurity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Spring</tag>
+      
+      <tag>Spring Security</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>JWT</title>
+    <link href="/2024/10/25/JWT/"/>
+    <url>/2024/10/25/JWT/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>JWT</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JWT</tag>
+      
+      <tag>token</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo基础命令</title>
+    <link href="/2024/10/24/Hexo%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
+    <url>/2024/10/24/Hexo%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo命令"><a href="#Hexo命令" class="headerlink" title="Hexo命令"></a>Hexo命令</h2><h3 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 清除缓存</span><br>hexo clean<br><br><span class="hljs-comment"># 生成文件</span><br>hexo g[generate]<br><br><span class="hljs-comment"># 部署</span><br>hexo d[deploy]<br></code></pre></td></tr></table></figure><h3 id="创建基础功能页面"><a href="#创建基础功能页面" class="headerlink" title="创建基础功能页面"></a>创建基础功能页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建【分类(categories)】选项</span><br>hexo new page categories<br><br><span class="hljs-comment"># source/categories/index.md 中添加</span><br><span class="hljs-comment"># type: &quot;categories&quot;</span><br><br><br><span class="hljs-comment"># 创建【标签(tags)】选项</span><br>hexo new page tags<br><br><span class="hljs-comment"># source/tags/index.md 中添加</span><br><span class="hljs-comment"># type: &quot;tags&quot;</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>博客</tag>
+      
+      <tag>命令</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo</title>
+    <link href="/2024/10/24/Hexo/"/>
+    <url>/2024/10/24/Hexo/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo主题"><a href="#Hexo主题" class="headerlink" title="Hexo主题"></a>Hexo主题</h2><h4 id="使用了Hexo-Aurora-Theme"><a href="#使用了Hexo-Aurora-Theme" class="headerlink" title="使用了Hexo Aurora Theme"></a>使用了<a href="https://aurora.tridiamond.tech/cn/">Hexo Aurora Theme</a></h4><h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><h4 id="需要了解tag如何创建"><a href="#需要了解tag如何创建" class="headerlink" title="需要了解tag如何创建"></a>需要了解<code>tag</code>如何创建</h4>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>主题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>demo</title>
+    <link href="/2024/10/24/demo/"/>
+    <url>/2024/10/24/demo/</url>
+    
+    <content type="html"><![CDATA[<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><h3 id="测试测试"><a href="#测试测试" class="headerlink" title="测试测试"></a>测试测试</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">List</span> <span class="hljs-variable">list</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>();<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
   
 </search>
