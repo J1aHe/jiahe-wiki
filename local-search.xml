@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Vercel域名配置</title>
+    <link href="/2024/11/04/Vercel%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE/"/>
+    <url>/2024/11/04/Vercel%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Vercel域名配置"><a href="#Vercel域名配置" class="headerlink" title="Vercel域名配置"></a>Vercel域名配置</h2><h3 id="大致流程"><a href="#大致流程" class="headerlink" title="大致流程"></a>大致流程</h3><p><img src="/img.png" alt="img.png"></p><blockquote><p>看下4的内容</p></blockquote><h3 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h3><p><img src="/img_1.png" alt="img_1.png"></p><blockquote><p>确定即可</p></blockquote><h3 id="这样即是配置成功"><a href="#这样即是配置成功" class="headerlink" title="这样即是配置成功"></a>这样即是配置成功</h3><p><img src="/img_2.png" alt="img_2.png"></p><h3 id="域名访问"><a href="#域名访问" class="headerlink" title="域名访问"></a>域名访问</h3><p><img src="/img_3.png" alt="img_3.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hexo迁移</title>
     <link href="/2024/10/28/Hexo%E8%BF%81%E7%A7%BB/"/>
     <url>/2024/10/28/Hexo%E8%BF%81%E7%A7%BB/</url>
