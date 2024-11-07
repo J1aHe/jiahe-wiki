@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Gitpod网页端使用</title>
+    <link href="/2024/11/07/Gitpod%E7%BD%91%E9%A1%B5%E7%AB%AF%E4%BD%BF%E7%94%A8/"/>
+    <url>/2024/11/07/Gitpod%E7%BD%91%E9%A1%B5%E7%AB%AF%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Gitpod网页端使用"><a href="#Gitpod网页端使用" class="headerlink" title="Gitpod网页端使用"></a>Gitpod网页端使用</h2><blockquote><p>输入网址<code>https://gitpod.io/#github.com/J1aHe/spark-yun</code></p><p><code>#</code>后面代表你要打开的github项目</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Gitpod</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Gitpod</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Git 给单个项目配置name和email</title>
     <link href="/2024/11/07/Git-%E7%BB%99%E5%8D%95%E4%B8%AA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEname%E5%92%8Cemail/"/>
     <url>/2024/11/07/Git-%E7%BB%99%E5%8D%95%E4%B8%AA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEname%E5%92%8Cemail/</url>
