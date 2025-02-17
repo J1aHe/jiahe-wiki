@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Windows相关命令</title>
+    <link href="/2025/02/17/Windows%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/"/>
+    <url>/2025/02/17/Windows%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<h2 id="端口相关"><a href="#端口相关" class="headerlink" title="端口相关"></a>端口相关</h2><h3 id="查看指定端口进程"><a href="#查看指定端口进程" class="headerlink" title="查看指定端口进程"></a>查看指定端口进程</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmd">netstat -aon | <span class="hljs-built_in">findstr</span> &quot;<span class="hljs-number">3004</span>&quot;<br><br>TCP    <span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>:<span class="hljs-number">3004</span>           <span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>:<span class="hljs-number">0</span>              LISTENING       <span class="hljs-number">10812</span><br></code></pre></td></tr></table></figure><h3 id="查看指定PID进程"><a href="#查看指定PID进程" class="headerlink" title="查看指定PID进程"></a>查看指定PID进程</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmd">tasklist | <span class="hljs-built_in">findstr</span> &quot;<span class="hljs-number">10812</span>&quot;<br><br>node.exe                     <span class="hljs-number">10812</span> RDP-Tcp#<span class="hljs-number">0</span>                  <span class="hljs-number">1</span>  <span class="hljs-number">1</span>,<span class="hljs-number">394</span>,<span class="hljs-number">112</span> K<br></code></pre></td></tr></table></figure><h3 id="kill指定PID进程"><a href="#kill指定PID进程" class="headerlink" title="kill指定PID进程"></a>kill指定PID进程</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">taskkill</span> /T /F /PID <span class="hljs-number">10812</span><br><br>成功: 已终止 PID <span class="hljs-number">10812</span> (属于 PID <span class="hljs-number">10812</span> 子进程)的进程。<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Windows</category>
+      
+      <category>命令</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>命令</tag>
+      
+      <tag>Windows</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Fluid语法记录</title>
+    <link href="/2025/02/07/Fluid%E8%AF%AD%E6%B3%95%E8%AE%B0%E5%BD%95/"/>
+    <url>/2025/02/07/Fluid%E8%AF%AD%E6%B3%95%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="便签"><a href="#便签" class="headerlink" title="便签"></a>便签</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% note primary %&#125;<br>primary<br>&#123;% endnote %&#125;<br></code></pre></td></tr></table></figure><div class="note note-primary">            <p>primary</p>          </div><div class="note note-secondary">            <p>secondary</p>          </div><div class="note note-success">            <p>success</p>          </div><div class="note note-danger">            <p>danger</p>          </div><div class="note note-warning">            <p>warning</p>          </div><div class="note note-info">            <p>info</p>          </div><div class="note note-light">            <p>light</p>          </div><h1 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% label primary @primary %&#125;<br></code></pre></td></tr></table></figure><span class="label label-primary">primary</span><span class="label label-default">default</span><span class="label label-info">info</span><span class="label label-success">success</span><span class="label label-warning">warning</span><span class="label label-danger">danger</span><h1 id="折叠块"><a href="#折叠块" class="headerlink" title="折叠块"></a>折叠块</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% fold primary @title %&#125;<br>需要折叠的一段内容，支持 markdown<br>primary: 和行内标签类似的可选参数<br>title: 折叠块上的标题<br>&#123;% endfold %&#125;<br></code></pre></td></tr></table></figure>    <div class="fold">      <div class="fold-title fold-primary collapsed" data-toggle="collapse" href="#collapse-a5464226" role="button" aria-expanded="false" aria-controls="collapse-a5464226">        <div class="fold-arrow">▶</div>title      </div>      <div class="fold-collapse collapse" id="collapse-a5464226">        <div class="fold-content">          <p>需要折叠的一段内容，支持 markdown<br>primary: 和行内标签类似的可选参数<br>title: 折叠块上的标题</p>        </div>      </div>    </div><h1 id="勾选框"><a href="#勾选框" class="headerlink" title="勾选框"></a>勾选框</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% cb text, checked?, incline? %&#125;<br>text：显示的文字<br>checked：默认是否已勾选，默认 false<br>incline: 是否内联（可以理解为后面的文字是否换行），默认 false<br><br>例：<br>&#123;% cb texxxxxxxxxt, true, true %&#125;<br></code></pre></td></tr></table></figure>            <input type="checkbox"  checked="checked">texxxxxxxxxt          <div>            <input type="checkbox"  checked="checked">默认选中          </div><div>            <input type="checkbox"  >内联示例          </div> 后面文字换行<h1 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% btn https://wiki.j1ahe.cn, Home, hover %&#125;<br></code></pre></td></tr></table></figure><a class="btn" href="https://wiki.j1ahe.cn"  title="hover" target="_blank">Home</a><h1 id=""><a href="#" class="headerlink" title=""></a><a class="btn" href="https://hexo.fluid-dev.com/docs/"  title="Fluid Doc" target="_blank">Fluid</a></h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>拦截器和过滤器</title>
+    <link href="/2024/11/25/%E6%8B%A6%E6%88%AA%E5%99%A8%E5%92%8C%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
+    <url>/2024/11/25/%E6%8B%A6%E6%88%AA%E5%99%A8%E5%92%8C%E8%BF%87%E6%BB%A4%E5%99%A8/</url>
+    
+    <content type="html"><![CDATA[<h2 id="过滤器和拦截器"><a href="#过滤器和拦截器" class="headerlink" title="过滤器和拦截器"></a>过滤器和拦截器</h2><p><img src="/img/java/filter.png" alt="示例1.png"></p><p><img src="/img/java/filter2.png" alt="示例2.png"></p><h3 id="Filter（过滤器）"><a href="#Filter（过滤器）" class="headerlink" title="Filter（过滤器）"></a>Filter（过滤器）</h3><p>过滤器的配置比较简单，直接实现<code>Filter</code>接口即可，也可以通过<code>@WebFilter</code>注解实现对特定URL拦截。</p><p>可以看到Filter 接口中定义了三个方法。</p><ul><li><code>init()</code> ：该方法在容器启动初始化过滤器时被调用，它在 Filter 的整个生命周期只会被调用一次。<br>注意：这个方法必须执行成功，否则过滤器会不起作用。</li><li><code>doFilter()</code>：容器中的每一次请求都会调用该方法， FilterChain 用来调用下一个过滤器 Filter。</li><li><code>destroy()</code>： 当容器销毁 过滤器实例时调用该方法，一般在方法中销毁或关闭资源，在过滤器 Filter 的整个生命周期也只会被调用一次</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> javax.servlet.*;<br><br><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyFilter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Filter</span> &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">(FilterConfig filterConfig)</span> <span class="hljs-keyword">throws</span> ServletException &#123;<br>        System.out.println(<span class="hljs-string">&quot;MyFilter  init&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doFilter</span><span class="hljs-params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="hljs-keyword">throws</span> IOException, ServletException &#123;<br>        System.out.println(<span class="hljs-string">&quot;MyFilter  doFilter&quot;</span>);<br>        <span class="hljs-comment">// 继续传递请求</span><br>        filterChain.doFilter(servletRequest, servletResponse);<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">destroy</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;MyFilter  destroy&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="Interceptor（拦截器）"><a href="#Interceptor（拦截器）" class="headerlink" title="Interceptor（拦截器）"></a>Interceptor（拦截器）</h3><p>拦截器是<strong>链式调用</strong>，一个应用中可以同时存在多个拦截器<code>Interceptor</code>， 一个请求也可以触发多个拦截器<br>，而每个拦截器的调用会依据它的声明顺序依次执行。</p><p>请求的拦截是通过<code>HandlerInterceptor</code>来实现，看到<code>HandlerInterceptor</code>接口中也定义了三个方法。</p><ul><li><code>preHandle()</code>：这个方法将在请求处理之前进行调用。 注意：如果该方法的返回值为false ，将视为当前请求结束，不仅自身的拦截器会失效，还会导致其他的拦截器也不再执行。</li><li><code>postHandle()</code>：只有在 preHandle() 方法返回值为true 时才会执行。会在Controller 中的方法调用之后，DispatcherServlet<br>返回渲染视图之前被调用。<br>有意思的是：postHandle() 方法被调用的顺序跟 preHandle() 是相反的，先声明的拦截器 preHandle() 方法先执行，而postHandle()<br>方法反而会后执行。</li><li><code>afterCompletion()</code>：只有在 preHandle() 方法返回值为true 时才会执行。在整个请求结束之后， DispatcherServlet 渲染了对应的视图之后执行。</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.springframework.web.servlet.HandlerInterceptor;<br><br><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyInterceptor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">HandlerInterceptor</span> &#123;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">preHandle</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br><br>        System.out.println(<span class="hljs-string">&quot;Interceptor preHandle&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">postHandle</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br><br>        System.out.println(<span class="hljs-string">&quot;Interceptor postHandle&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">afterCompletion</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br><br>        System.out.println(<span class="hljs-string">&quot;Interceptor afterCompletion&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>配置自定义拦截器</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequiredArgsConstructor</span><br><span class="hljs-meta">@Configuration</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">WebConfig</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">WebMvcConfigurer</span> &#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> TokenInterceptor tokenInterceptor;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addInterceptors</span><span class="hljs-params">(InterceptorRegistry registry)</span> &#123;<br>        registry.addInterceptor(tokenInterceptor)<br>                .addPathPatterns(<span class="hljs-string">&quot;/user/**&quot;</span>)<br>                .excludePathPatterns(<span class="hljs-string">&quot;/user/login&quot;</span>, <span class="hljs-string">&quot;/user/register&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>运行顺序：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs text">MyFilter  init<br>...<br>MyFilter  doFilter<br>Interceptor preHandle<br>Controller<br>Interceptor postHandle<br>Interceptor afterCompletion<br>...<br>MyFilter  destroy<br></code></pre></td></tr></table></figure><h3 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h3><p>过滤器用<code>@Order</code>注解控制执行顺序，通过<code>@Order</code>控制过滤器的级别，值越小级别越高越先执行。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Order(Ordered.HIGHEST_PRECEDENCE)</span><br><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyFilter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Filter</span> &#123;<br></code></pre></td></tr></table></figure><p>拦截器默认的执行顺序，就是它的注册顺序，也可以通过<code>Order(int)</code>手动设置控制，值越小越先执行。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addInterceptors</span><span class="hljs-params">(InterceptorRegistry registry)</span> &#123;<br>    registry.addInterceptor(<span class="hljs-keyword">new</span> <span class="hljs-title class_">MyInterceptor2</span>()).addPathPatterns(<span class="hljs-string">&quot;/**&quot;</span>).order(<span class="hljs-number">2</span>);<br>    registry.addInterceptor(<span class="hljs-keyword">new</span> <span class="hljs-title class_">MyInterceptor1</span>()).addPathPatterns(<span class="hljs-string">&quot;/**&quot;</span>).order(<span class="hljs-number">1</span>);<br>    registry.addInterceptor(<span class="hljs-keyword">new</span> <span class="hljs-title class_">MyInterceptor</span>()).addPathPatterns(<span class="hljs-string">&quot;/**&quot;</span>).order(<span class="hljs-number">3</span>);<br>&#125;<br></code></pre></td></tr></table></figure><p>先声明的拦截器 <code>preHandle()</code> 方法先执行，而 <code>postHandle()</code> 方法反而会后执行。</p><blockquote><p>另外还有一点就是 过滤器 不能够使用 Spring 容器资源，只能在 Servlet 容器（e.g. tomcat）启动时调用一次，<br>而 拦截器 是 Spring 提供的组件，由 Spring 来管理，因此它能使用 Spring 里的任何资源、对象，例如 Service 对象、数据源、事务管理等等，<br>通过 IoC 注入到 拦截器 中即可。<br>相比较而言，拦截器 要更灵活一些。</p></blockquote><h1 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a><a href="https://segmentfault.com/a/1190000022833940">引用文章</a></h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vue3-Day3</title>
+    <link href="/2024/11/14/Vue3-Day3/"/>
+    <url>/2024/11/14/Vue3-Day3/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Vue3-Day3"><a href="#Vue3-Day3" class="headerlink" title="Vue3-Day3"></a>Vue3-Day3</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>Vue3</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Vue3</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vue3-Day2</title>
+    <link href="/2024/11/14/Vue3-Day2/"/>
+    <url>/2024/11/14/Vue3-Day2/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Vue3-Day2"><a href="#Vue3-Day2" class="headerlink" title="Vue3-Day2"></a>Vue3-Day2</h2><h3 id="响应式数据"><a href="#响应式数据" class="headerlink" title="响应式数据"></a>响应式数据</h3><h4 id="基础类型的响应式数据（ref）"><a href="#基础类型的响应式数据（ref）" class="headerlink" title="基础类型的响应式数据（ref）"></a>基础类型的响应式数据（ref）</h4><blockquote><p>在setup中，使用ref函数设置响应式数据。</p><p>数据会变成对象，在之后的使用中，需要<code>.value</code>去获取或修改值</p></blockquote><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;person&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>name:&#123;&#123; name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>age:&#123;&#123; age &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;changeName&quot;</span>&gt;</span>修改名字<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;changeAge&quot;</span>&gt;</span>修改年龄<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;showTel&quot;</span>&gt;</span>tel<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Person&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">import</span> &#123;ref&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span></span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// data</span></span><br><span class="language-javascript">  <span class="hljs-keyword">let</span> name = <span class="hljs-title function_">ref</span>(<span class="hljs-string">&#x27;zhangsan&#x27;</span>)</span><br><span class="language-javascript">  <span class="hljs-keyword">let</span> age = <span class="hljs-title function_">ref</span>(<span class="hljs-number">18</span>)</span><br><span class="language-javascript">  <span class="hljs-keyword">let</span> tel = <span class="hljs-number">13812341234</span></span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// function</span></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">changeName</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    name.<span class="hljs-property">value</span> = <span class="hljs-string">&#x27;lisi&#x27;</span></span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">changeAge</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    age.<span class="hljs-property">value</span> += <span class="hljs-number">1</span></span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">showTel</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">alert</span>(tel)</span><br><span class="language-javascript">    tel += <span class="hljs-number">1</span></span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">  <span class="hljs-selector-class">.person</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">background-color</span>: skyblue;</span><br><span class="language-css">    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;</span><br><span class="language-css">  &#125;</span><br><span class="language-css"></span><br><span class="language-css">  <span class="hljs-selector-tag">button</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">5px</span>;</span><br><span class="language-css">  &#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure><h4 id="对象类型的响应式数据（reactive）"><a href="#对象类型的响应式数据（reactive）" class="headerlink" title="对象类型的响应式数据（reactive）"></a>对象类型的响应式数据（reactive）</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;person&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>brand:&#123;&#123; car.brand &#125;&#125; ,price:&#123;&#123; car.price &#125;&#125; mi<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;changePrice&quot;</span>&gt;</span>changePrice<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;game in games&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;game.id&quot;</span>&gt;</span>&#123;&#123; game.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;changeGame&quot;</span>&gt;</span>changeFirstGameName<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Person&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">import</span> &#123;reactive&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span></span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// data</span></span><br><span class="language-javascript">  <span class="hljs-keyword">let</span> car = <span class="hljs-title function_">reactive</span>(&#123;</span><br><span class="language-javascript">    <span class="hljs-attr">brand</span>: <span class="hljs-string">&#x27;xiaomi&#x27;</span>,</span><br><span class="language-javascript">    <span class="hljs-attr">price</span>: <span class="hljs-number">1000</span></span><br><span class="language-javascript">  &#125;)</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">let</span> games = <span class="hljs-title function_">reactive</span>([&#123;</span><br><span class="language-javascript">    <span class="hljs-attr">id</span>: <span class="hljs-string">&#x27;game1&#x27;</span>,</span><br><span class="language-javascript">    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;name1&quot;</span></span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">    &#123;</span><br><span class="language-javascript">      <span class="hljs-attr">id</span>: <span class="hljs-string">&#x27;game2&#x27;</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;name2&quot;</span></span><br><span class="language-javascript">    &#125;, &#123;</span><br><span class="language-javascript">      <span class="hljs-attr">id</span>: <span class="hljs-string">&#x27;game3&#x27;</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;name3&quot;</span></span><br><span class="language-javascript">    &#125;])</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">changePrice</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    car.<span class="hljs-property">price</span> += <span class="hljs-number">10</span></span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">changeGame</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    games[<span class="hljs-number">0</span>].<span class="hljs-property">name</span> = <span class="hljs-string">&#x27;gameChange&#x27;</span></span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">  <span class="hljs-selector-class">.person</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">background-color</span>: skyblue;</span><br><span class="language-css">    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;</span><br><span class="language-css">  &#125;</span><br><span class="language-css"></span><br><span class="language-css">  <span class="hljs-selector-tag">button</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">5px</span>;</span><br><span class="language-css">  &#125;</span><br><span class="language-css"></span><br><span class="language-css">  <span class="hljs-selector-tag">li</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;</span><br><span class="language-css">  &#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">ref：可以定义基本类型和对象类型的响应式数据<br>reactive：只能定义对象类型的响应式数据<br></code></pre></td></tr></table></figure><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">ref包含了reactive，<br>但是ref必须使用.value，例如ref(xx)，需要使用xx的话就需要xx.value，无论xx是什么类型(xx.value.name, xx.value[0])<br>可以使用volar插件(包含在Vue-Official中)来提醒每次使用ref时需要添加.value的问题<br></code></pre></td></tr></table></figure><p><img src="/img/vue/volar.png" alt="volar.png"></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">使用reactive，重新分配一个对象时，会使数据失去响应式，需要使用的话得使用Object.assign(o1, o2)<br>o2的属性都赋值给o1<br><br>但是ref可以直接赋值<br></code></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script&gt;<br>  function changeCar() &#123;<br>    Object.assign(car, &#123;brand: &#x27;audi&#x27;, price: 888&#125;)<br>  &#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>直接使用ref，遇到问题再使用reactive，有经验的自己写</p><h3 id="解构响应式数据"><a href="#解构响应式数据" class="headerlink" title="解构响应式数据"></a>解构响应式数据</h3><h4 id="toRefs"><a href="#toRefs" class="headerlink" title="toRefs"></a>toRefs</h4><blockquote><p>将数据结构成ref</p></blockquote><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Person&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">import</span> &#123;ref, reactive, toRefs&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span></span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">let</span> person = <span class="hljs-title function_">reactive</span>(&#123;</span><br><span class="language-javascript">        <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;zhangsan&#x27;</span>,</span><br><span class="language-javascript">        <span class="hljs-attr">age</span>: <span class="hljs-number">18</span></span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-comment">// 当前的这个name和age的指针地址和person中的name和age相同，</span></span><br><span class="language-javascript">    <span class="hljs-comment">// 任意修改外部的name/age或者person内部的name/age，两边的值都会做出修改</span></span><br><span class="language-javascript">    <span class="hljs-keyword">let</span> &#123;name, age&#125; = <span class="hljs-title function_">toRefs</span>(person)</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">function</span> <span class="hljs-title function_">changeName</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        person.<span class="hljs-property">name</span> += <span class="hljs-string">&#x27;=&#x27;</span></span><br><span class="language-javascript">        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person.<span class="hljs-property">name</span></span><br><span class="language-javascript">        name.<span class="hljs-property">value</span></span><br><span class="language-javascript">    )</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">function</span> <span class="hljs-title function_">changeName2</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        name.<span class="hljs-property">value</span> += <span class="hljs-string">&#x27;=&#x27;</span></span><br><span class="language-javascript">        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name)</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure><h4 id="toRef"><a href="#toRef" class="headerlink" title="toRef"></a>toRef</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Person&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">import</span> &#123;ref, reactive, toRefs, toRef&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span></span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">let</span> person = <span class="hljs-title function_">reactive</span>(&#123;</span><br><span class="language-javascript">        <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;zhangsan&#x27;</span>,</span><br><span class="language-javascript">        <span class="hljs-attr">age</span>: <span class="hljs-number">18</span></span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">let</span> name = <span class="hljs-title function_">toRef</span>(person, <span class="hljs-string">&#x27;name&#x27;</span>)</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name.<span class="hljs-property">value</span>)</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Vue3</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Vue3</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vue3-Day1</title>
+    <link href="/2024/11/13/Vue3-Day1/"/>
+    <url>/2024/11/13/Vue3-Day1/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Vue3-Day1"><a href="#Vue3-Day1" class="headerlink" title="Vue3-Day1"></a>Vue3-Day1</h2><h3 id="先安装NVM"><a href="#先安装NVM" class="headerlink" title="先安装NVM"></a>先安装NVM</h3><h3 id="使用VSCode需要安装的插件"><a href="#使用VSCode需要安装的插件" class="headerlink" title="使用VSCode需要安装的插件"></a>使用VSCode需要安装的插件</h3><p><strong>Vue-Official</strong></p><h3 id="之后使用NVM命令安装NPM"><a href="#之后使用NVM命令安装NPM" class="headerlink" title="之后使用NVM命令安装NPM"></a>之后使用NVM命令安装NPM</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nvm install latest<br></code></pre></td></tr></table></figure><h3 id="之后就可以基于-Vite-的构建项目，并进行设置"><a href="#之后就可以基于-Vite-的构建项目，并进行设置" class="headerlink" title="之后就可以基于 Vite 的构建项目，并进行设置"></a>之后就可以基于 Vite 的构建项目，并进行设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm create vue@latest<br></code></pre></td></tr></table></figure><blockquote><p>会看到如下配置</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">✔ Project name: … &lt;your-project-name&gt;<br>✔ Add TypeScript? … No / Yes<br>✔ Add JSX Support? … No / Yes<br>✔ Add Vue Router <span class="hljs-keyword">for</span> Single Page Application development? … No / Yes<br>✔ Add Pinia <span class="hljs-keyword">for</span> state management? … No / Yes<br>✔ Add Vitest <span class="hljs-keyword">for</span> Unit testing? … No / Yes<br>✔ Add an End-to-End Testing Solution? … No / Cypress / Nightwatch / Playwright<br>✔ Add ESLint <span class="hljs-keyword">for</span> code quality? … No / Yes<br>✔ Add Prettier <span class="hljs-keyword">for</span> code formatting? … No / Yes<br>✔ Add Vue DevTools 7 extension <span class="hljs-keyword">for</span> debugging? (experimental) … No / Yes<br><br>Scaffolding project <span class="hljs-keyword">in</span> ./&lt;your-project-name&gt;...<br>Done.<br></code></pre></td></tr></table></figure><h3 id="安装一个Vue3语法插件"><a href="#安装一个Vue3语法插件" class="headerlink" title="安装一个Vue3语法插件"></a>安装一个Vue3语法插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install vite-plugin-vue-setup-extend -D<br></code></pre></td></tr></table></figure><h3 id="修改vite-config-ts文件内容"><a href="#修改vite-config-ts文件内容" class="headerlink" title="修改vite.config.ts文件内容"></a>修改<code>vite.config.ts</code>文件内容</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123;fileURLToPath, <span class="hljs-variable constant_">URL</span>&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;node:url&#x27;</span><br><br><span class="hljs-keyword">import</span> &#123;defineConfig&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite&#x27;</span><br><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@vitejs/plugin-vue&#x27;</span><br><span class="hljs-keyword">import</span> vueDevTools <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite-plugin-vue-devtools&#x27;</span><br><span class="hljs-comment">// 这里添加</span><br><span class="hljs-keyword">import</span> vueSetupExtend <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite-plugin-vue-setup-extend&#x27;</span><br><br><span class="hljs-comment">// https://vite.dev/config/</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>(&#123;<br>    <span class="hljs-attr">plugins</span>: [<br>        <span class="hljs-title function_">vue</span>(),<br>        <span class="hljs-title function_">vueDevTools</span>(),<br>        <span class="hljs-comment">// 这里添加</span><br>        <span class="hljs-title function_">vueSetupExtend</span>()<br>    ],<br>    <span class="hljs-attr">resolve</span>: &#123;<br>        <span class="hljs-attr">alias</span>: &#123;<br>            <span class="hljs-string">&#x27;@&#x27;</span>: <span class="hljs-title function_">fileURLToPath</span>(<span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-string">&#x27;./src&#x27;</span>, <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>))<br>        &#125;,<br>    &#125;,<br>&#125;)<br></code></pre></td></tr></table></figure><blockquote><p>只用在setup的script里面写一个name即可，不需要写两个script了</p></blockquote><h3 id="Vue3组合式语法（非响应式数据）"><a href="#Vue3组合式语法（非响应式数据）" class="headerlink" title="Vue3组合式语法（非响应式数据）"></a>Vue3组合式语法（非响应式数据）</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;person&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>&#123;&#123; a &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>name:&#123;&#123; name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>age:&#123;&#123; age &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;changeName&quot;</span>&gt;</span>修改名字<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;changeAge&quot;</span>&gt;</span>修改年龄<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;showTel&quot;</span>&gt;</span>tel<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">let</span> a = <span class="hljs-number">666</span></span><br><span class="language-javascript">  <span class="hljs-comment">// data</span></span><br><span class="language-javascript">  <span class="hljs-keyword">let</span> name = <span class="hljs-string">&#x27;zhangsan&#x27;</span></span><br><span class="language-javascript">  <span class="hljs-keyword">let</span> age = <span class="hljs-number">18</span></span><br><span class="language-javascript">  <span class="hljs-keyword">let</span> tel = <span class="hljs-number">13812341234</span></span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// function  </span></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">changeName</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    name = <span class="hljs-string">&#x27;lisi&#x27;</span></span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">changeAge</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    age += <span class="hljs-number">1</span></span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">showTel</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">alert</span>(tel)</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">  <span class="hljs-selector-class">.person</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">background-color</span>: skyblue;</span><br><span class="language-css">    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;</span><br><span class="language-css">  &#125;</span><br><span class="language-css"></span><br><span class="language-css">  <span class="hljs-selector-tag">button</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">5px</span>;</span><br><span class="language-css">  &#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Vue3</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Vue3</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Gitpod网页端使用</title>
+    <link href="/2024/11/07/Gitpod%E7%BD%91%E9%A1%B5%E7%AB%AF%E4%BD%BF%E7%94%A8/"/>
+    <url>/2024/11/07/Gitpod%E7%BD%91%E9%A1%B5%E7%AB%AF%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Gitpod网页端使用"><a href="#Gitpod网页端使用" class="headerlink" title="Gitpod网页端使用"></a>Gitpod网页端使用</h2><p>输入网址<code>https://gitpod.io/#github.com/J1aHe/spark-yun</code></p><p><code>#</code>后面代表你要打开的github项目</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Gitpod</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Gitpod</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Git 给单个项目配置name和email</title>
+    <link href="/2024/11/07/Git-%E7%BB%99%E5%8D%95%E4%B8%AA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEname%E5%92%8Cemail/"/>
+    <url>/2024/11/07/Git-%E7%BB%99%E5%8D%95%E4%B8%AA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AEname%E5%92%8Cemail/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Git-给单个项目配置name和email"><a href="#Git-给单个项目配置name和email" class="headerlink" title="Git 给单个项目配置name和email"></a>Git 给单个项目配置name和email</h2><h3 id="在每个项目的主目录下一个隐藏文件夹-git"><a href="#在每个项目的主目录下一个隐藏文件夹-git" class="headerlink" title="在每个项目的主目录下一个隐藏文件夹.git"></a>在每个项目的主目录下一个隐藏文件夹<code>.git</code></h3><h3 id="git文件夹中有一个config文件"><a href="#git文件夹中有一个config文件" class="headerlink" title=".git文件夹中有一个config文件"></a><code>.git</code>文件夹中有一个<code>config</code>文件</h3><h3 id="可以发现以下内容，如果没有，则说明当前项目未配置，使用的是global配置"><a href="#可以发现以下内容，如果没有，则说明当前项目未配置，使用的是global配置" class="headerlink" title="可以发现以下内容，如果没有，则说明当前项目未配置，使用的是global配置"></a>可以发现以下内容，如果没有，则说明当前项目未配置，使用的是global配置</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">[user]<br>    name = J1aHe<br>    email = j1ahe@foxmail.com<br></code></pre></td></tr></table></figure><h3 id="也可使用命令修改"><a href="#也可使用命令修改" class="headerlink" title="也可使用命令修改"></a>也可使用命令修改</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 修改当前项目用户名</span><br>git config user.name <span class="hljs-string">&quot;jiahe&quot;</span><br><br><span class="hljs-comment"># 修改全局用户名</span><br>git config --global user.name <span class="hljs-string">&quot;jiahe&quot;</span><br><br><span class="hljs-comment"># 修改email同理</span><br></code></pre></td></tr></table></figure><h3 id="查看用户名"><a href="#查看用户名" class="headerlink" title="查看用户名"></a>查看用户名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看当前项目配置的用户名</span><br>git config user.name<br><br><span class="hljs-comment"># 查看全局用户名</span><br>git config --global user.name<br><br><span class="hljs-comment"># 查看email同理</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Git</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vercel域名配置</title>
+    <link href="/2024/11/04/Vercel%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE/"/>
+    <url>/2024/11/04/Vercel%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Vercel域名配置"><a href="#Vercel域名配置" class="headerlink" title="Vercel域名配置"></a>Vercel域名配置</h2><h3 id="大致流程"><a href="#大致流程" class="headerlink" title="大致流程"></a>大致流程</h3><p><img src="/img/vercel/img.png" alt="img.png"></p><blockquote><p>看下4的内容</p></blockquote><h3 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h3><p><img src="/img/vercel/img_1.png" alt="img_1.png"></p><blockquote><p>确定即可</p></blockquote><h3 id="这样即是配置成功"><a href="#这样即是配置成功" class="headerlink" title="这样即是配置成功"></a>这样即是配置成功</h3><p><img src="/img/vercel/img_2.png" alt="img_2.png"></p><h3 id="域名访问"><a href="#域名访问" class="headerlink" title="域名访问"></a>域名访问</h3><p><img src="/img/vercel/img_3.png" alt="img_3.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo迁移</title>
+    <link href="/2024/10/28/Hexo%E8%BF%81%E7%A7%BB/"/>
+    <url>/2024/10/28/Hexo%E8%BF%81%E7%A7%BB/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo迁移"><a href="#Hexo迁移" class="headerlink" title="Hexo迁移"></a>Hexo迁移</h2><p><strong>注意！！！仅本人方法，不代表其他任何人</strong></p><h4 id="1-新电脑上安装hexo"><a href="#1-新电脑上安装hexo" class="headerlink" title="1.新电脑上安装hexo"></a>1.新电脑上安装hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-cli -g<br></code></pre></td></tr></table></figure><h4 id="2-在想要的地方生成文件夹"><a href="#2-在想要的地方生成文件夹" class="headerlink" title="2.在想要的地方生成文件夹"></a>2.在想要的地方生成文件夹</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo init blog<br></code></pre></td></tr></table></figure><h4 id="3-然后将之前旧文件夹的内容，解压到新的blog文件夹"><a href="#3-然后将之前旧文件夹的内容，解压到新的blog文件夹" class="headerlink" title="3.然后将之前旧文件夹的内容，解压到新的blog文件夹"></a>3.然后将之前旧文件夹的内容，解压到新的<code>blog</code>文件夹</h4><p>因为这次刚好想换个主题，所以我只把<code>source</code>文件夹替换掉了</p><h4 id="4-最后修改-config-yml的配置"><a href="#4-最后修改-config-yml的配置" class="headerlink" title="4.最后修改_config.yml的配置"></a>4.最后修改<code>_config.yml</code>的配置</h4><p>注意最后<code>deploy</code>的配置</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">&#x27;git&#x27;</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:J1aHe/jiahe-wiki.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>迁移</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Java全局异常处理</title>
+    <link href="/2024/10/28/Java%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+    <url>/2024/10/28/Java%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Java全局异常处理"><a href="#Java全局异常处理" class="headerlink" title="Java全局异常处理"></a>Java全局异常处理</h2><blockquote><p>全局异常处理是一种将异常处理代码从业务逻辑中分离出来的技术。</p><p>在Java中，全局异常处理使用@ControllerAdvice注解定义一个全局的异常处理类。</p><p>在该类中，使用@ExceptionHandler注解捕获异常并进行处理。</p><p>使用全局异常处理技术，可以统一处理异常，提高代码的复用性，降低代码的冗余度。</p></blockquote><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-定义自定义异常类"><a href="#1-定义自定义异常类" class="headerlink" title="1. 定义自定义异常类"></a>1. 定义自定义异常类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.jiahe.api.exception;<br><br><br><span class="hljs-keyword">import</span> lombok.Getter;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BaseException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">RuntimeException</span> &#123;<br><br>    <span class="hljs-meta">@Getter</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String code;<br><br>    <span class="hljs-meta">@Getter</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String message;<br><br>    <span class="hljs-meta">@Getter</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Object error;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">BaseException</span><span class="hljs-params">(String code, String message, Object error)</span> &#123;<br>        <span class="hljs-built_in">this</span>.code = code;<br>        <span class="hljs-built_in">this</span>.message = message;<br>        <span class="hljs-built_in">this</span>.error = error;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">BaseException</span><span class="hljs-params">(String code, String message)</span> &#123;<br>        <span class="hljs-built_in">this</span>.code = code;<br>        <span class="hljs-built_in">this</span>.message = message;<br>        <span class="hljs-built_in">this</span>.error = <span class="hljs-literal">null</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">BaseException</span><span class="hljs-params">(String message)</span> &#123;<br>        <span class="hljs-built_in">this</span>.code = <span class="hljs-literal">null</span>;<br>        <span class="hljs-built_in">this</span>.message = message;<br>        <span class="hljs-built_in">this</span>.error = <span class="hljs-literal">null</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="2-定义全局异常处理类"><a href="#2-定义全局异常处理类" class="headerlink" title="2. 定义全局异常处理类"></a>2. 定义全局异常处理类</h3><blockquote><p>定义全局异常处理类需要使用@ControllerAdvice注解。</p><p>在该类中，使用@ExceptionHandler注解捕获异常并进行处理。</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>异常</category>
+      
+      <category>Exception</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>异常</tag>
+      
+      <tag>Exception</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Mysql数据复制</title>
+    <link href="/2024/10/26/Mysql%E6%95%B0%E6%8D%AE%E5%A4%8D%E5%88%B6/"/>
+    <url>/2024/10/26/Mysql%E6%95%B0%E6%8D%AE%E5%A4%8D%E5%88%B6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Mysql数据复制"><a href="#Mysql数据复制" class="headerlink" title="Mysql数据复制"></a>Mysql数据复制</h2><blockquote><p>将一张表的数据复制（not迁移&#x2F;导入）到另外一张表</p></blockquote><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><blockquote><p>拷贝表1的全部<code>数据</code>到表2</p></blockquote><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> table2 <span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> table1 <br></code></pre></td></tr></table></figure><h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><blockquote><p>创建表2， 同时拷贝表1的数据和结构到表2</p></blockquote><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> table3 <span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> table1<br></code></pre></td></tr></table></figure><h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><blockquote><p>创建表2，只拷贝表1的结构到表2，不拷贝数据</p><p>或者查看源表的ddl，复制粘贴</p></blockquote><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> table4 <span class="hljs-keyword">LIKE</span> table1<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Mysql</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Mysql</tag>
+      
+      <tag>数据复制</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Spring Security</title>
+    <link href="/2024/10/25/Spring-Security/"/>
+    <url>/2024/10/25/Spring-Security/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Spring-Security"><a href="#Spring-Security" class="headerlink" title="Spring Security"></a>Spring Security</h2><h3 id="Maven依赖"><a href="#Maven依赖" class="headerlink" title="Maven依赖"></a>Maven依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-security<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 6.19版本往后需要java17 --&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>加入到项目以后，会有一个<code>/login</code>页面，需要登录才能访问其他页面，默认用户名<code>user</code>，密码在启动日志中</p></blockquote><h3 id="也可以配置用户名和密码"><a href="#也可以配置用户名和密码" class="headerlink" title="也可以配置用户名和密码"></a>也可以配置用户名和密码</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">spring:</span><br>  <span class="hljs-attr">security:</span><br>    <span class="hljs-attr">user:</span><br>      <span class="hljs-attr">name:</span> <span class="hljs-string">jiahe</span><br>      <span class="hljs-attr">password:</span> <span class="hljs-string">jiahe45</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Spring</category>
+      
+      <category>Spring Sercurity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Spring</tag>
+      
+      <tag>Spring Security</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>JWT</title>
+    <link href="/2024/10/25/JWT/"/>
+    <url>/2024/10/25/JWT/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>JWT</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JWT</tag>
+      
+      <tag>token</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo基础命令</title>
+    <link href="/2024/10/24/Hexo%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
+    <url>/2024/10/24/Hexo%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo命令"><a href="#Hexo命令" class="headerlink" title="Hexo命令"></a>Hexo命令</h2><h3 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 清除缓存</span><br>hexo clean<br><br><span class="hljs-comment"># 生成文件</span><br>hexo g[generate]<br><br><span class="hljs-comment"># 部署</span><br>hexo d[deploy]<br></code></pre></td></tr></table></figure><h3 id="创建基础功能页面"><a href="#创建基础功能页面" class="headerlink" title="创建基础功能页面"></a>创建基础功能页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建【分类(categories)】选项</span><br>hexo new page categories<br><br><span class="hljs-comment"># source/categories/index.md 中添加</span><br><span class="hljs-comment"># type: &quot;categories&quot;</span><br><br><br><span class="hljs-comment"># 创建【标签(tags)】选项</span><br>hexo new page tags<br><br><span class="hljs-comment"># source/tags/index.md 中添加</span><br><span class="hljs-comment"># type: &quot;tags&quot;</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>博客</tag>
+      
+      <tag>命令</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo</title>
+    <link href="/2024/10/24/Hexo/"/>
+    <url>/2024/10/24/Hexo/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo主题"><a href="#Hexo主题" class="headerlink" title="Hexo主题"></a>Hexo主题</h2><h4 id="使用了Hexo-Aurora-Theme"><a href="#使用了Hexo-Aurora-Theme" class="headerlink" title="使用了Hexo Aurora Theme"></a>使用了<a href="https://aurora.tridiamond.tech/cn/">Hexo Aurora Theme</a></h4><h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><h4 id="需要了解tag如何创建"><a href="#需要了解tag如何创建" class="headerlink" title="需要了解tag如何创建"></a>需要了解<code>tag</code>如何创建</h4>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>主题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2024/10/24/hello-world/"/>
+    <url>/2024/10/24/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
