@@ -19,21 +19,32 @@
   <meta name="author" content="J1aHe">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Archives">
-<meta property="og:url" content="https://wiki.j1ahe.cn/archives/2025/index.html">
+    <meta name="description" content="需求[Feature] api同步到数据源 拆解1.添加API数据源Q:数据源的连接方式？ A:  2.同步Q:如何同步？(同步方式) A:使用SPARK进行同步  Q:来源数据的格式要求？ A:  Q:拿到数据后如何进行处理？ A:  Q:如何同步至去向数据源？ A:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="API同步至数据源">
+<meta property="og:url" content="https://wiki.j1ahe.cn/2025/03/11/API%E5%90%8C%E6%AD%A5%E8%87%B3%E6%95%B0%E6%8D%AE%E6%BA%90/index.html">
 <meta property="og:site_name" content="J1aHe&#39;s Blog">
+<meta property="og:description" content="需求[Feature] api同步到数据源 拆解1.添加API数据源Q:数据源的连接方式？ A:  2.同步Q:如何同步？(同步方式) A:使用SPARK进行同步  Q:来源数据的格式要求？ A:  Q:拿到数据后如何进行处理？ A:  Q:如何同步至去向数据源？ A:">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-11T02:58:04.000Z">
+<meta property="article:modified_time" content="2025-03-11T03:06:40.104Z">
 <meta property="article:author" content="J1aHe">
+<meta property="article:tag" content="-SPARK-YUN">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Archives - J1aHe&#39;s Blog</title>
+  <title>API同步至数据源 - J1aHe&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -83,7 +94,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -189,9 +200,49 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Archives"></span>
+            <span id="subtitle" data-typed-text="API同步至数据源"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-11 10:58" pubdate>
+          March 11, 2025 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          82 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          1 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -207,64 +258,187 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">21 posts in total</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2025</p>
-    
-    <a href="/2025/03/11/API%E5%90%8C%E6%AD%A5%E8%87%B3%E6%95%B0%E6%8D%AE%E6%BA%90/" class="list-group-item list-group-item-action">
-      <time>03-11</time>
-      <div class="list-group-item-title">API同步至数据源</div>
-    </a>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">API同步至数据源</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p><a target="_blank" rel="noopener" href="https://github.com/isxcode/spark-yun/issues/1368">[Feature] api同步到数据源</a></p>
+<h2 id="拆解"><a href="#拆解" class="headerlink" title="拆解"></a>拆解</h2><h3 id="1-添加API数据源"><a href="#1-添加API数据源" class="headerlink" title="1.添加API数据源"></a>1.添加API数据源</h3><p>Q:数据源的连接方式？</p>
+<p>A:</p>
+
+<h3 id="2-同步"><a href="#2-同步" class="headerlink" title="2.同步"></a>2.同步</h3><p>Q:如何同步？(同步方式)</p>
+<p>A:使用SPARK进行同步</p>
+
+<p>Q:来源数据的格式要求？</p>
+<p>A:</p>
+
+<p>Q:拿到数据后如何进行处理？</p>
+<p>A:</p>
+
+<p>Q:如何同步至去向数据源？</p>
+<p>A:</p>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
   
-    
-    <a href="/2025/03/08/%E8%87%B3%E8%BD%BB%E4%BA%91%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" class="list-group-item list-group-item-action">
-      <time>03-08</time>
-      <div class="list-group-item-title">至轻云项目启动问题记录</div>
-    </a>
   
-    
-    <a href="/2025/03/03/html/" class="list-group-item list-group-item-action">
-      <time>03-03</time>
-      <div class="list-group-item-title"></div>
-    </a>
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/SPARK-YUN/" class="print-no-link">#-SPARK-YUN</a>
+      
+    </div>
   
-    
-    <a href="/2025/02/17/Windows%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/" class="list-group-item list-group-item-action">
-      <time>02-17</time>
-      <div class="list-group-item-title">Windows相关命令</div>
-    </a>
+</div>
+
+
+              
   
-    
-    <a href="/2025/02/07/Fluid%E8%AF%AD%E6%B3%95%E8%AE%B0%E5%BD%95/" class="list-group-item list-group-item-action">
-      <time>02-07</time>
-      <div class="list-group-item-title">Fluid语法记录</div>
-    </a>
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>API同步至数据源</div>
+      <div>https://wiki.j1ahe.cn/2025/03/11/API同步至数据源/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>J1aHe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>March 11, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/03/08/%E8%87%B3%E8%BD%BB%E4%BA%91%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" title="至轻云项目启动问题记录">
+                        <span class="hidden-mobile">至轻云项目启动问题记录</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
   
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
 </div>
 
 
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
     
@@ -357,6 +531,99 @@
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
 
